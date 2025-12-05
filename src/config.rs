@@ -110,9 +110,9 @@ lazy_static::lazy_static! {
         //密码验证方式，use-temporary-password：一次性密码，use-permanent-password：固定密码，use-both-passwords：同时使用
         map.insert("verification-method".to_string(), "use-permanent-password".to_string());
         //隐藏连接管理窗口，approve-mode=password，verification-method=use-permanent-password，才可生效，项目中有修复代码
-        map.insert("allow-hide-cm".to_string(), "Y".to_string());
+        map.insert("allow-hide-cm".to_string(), "N".to_string());
         //隐藏托盘图标，approve-mode=password，verification-method=use-permanent-password，才可生效，项目中有修复代码
-        map.insert("hide-tray".to_string(), "Y".to_string());
+        map.insert("hide-tray".to_string(), "N".to_string());
         RwLock::new(map)
     };
     pub static ref OVERWRITE_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
@@ -165,7 +165,7 @@ lazy_static::lazy_static! {
         //隐藏代理设置选项
         map.insert("hide-proxy-settings".to_string(), "N".to_string());
         //隐藏服务设置选项
-        map.insert("hide-server-settings".to_string(), "N".to_string());
+        map.insert("hide-server-settings".to_string(), "Y".to_string());
         //隐藏安全设置选项
         map.insert("hide-security-settings".to_string(), "N".to_string());
         //隐藏网络设置选项
